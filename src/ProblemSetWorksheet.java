@@ -61,6 +61,9 @@ public class ProblemSetWorksheet {
                 else if (input.equals("2")){
                     if(numHealthPotions > 0){
                         health += healthPotionHealAmount;
+                        if (health > 100){
+                            health = 100;
+                        }
                         numHealthPotions--;
                         System.out.println("\t> You drink a health potion, healing yourself for " + healthPotionHealAmount + "."
                                 + "\n\t> You now have " + health + " HP."
