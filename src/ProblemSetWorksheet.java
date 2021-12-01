@@ -6,10 +6,6 @@ public class ProblemSetWorksheet {
 
     public static void main (String[] args){
 
-    }
-
-    public static void fight(){
-
         // System objects
         Scanner scnr = new Scanner(System.in);
         Random rand = new Random();
