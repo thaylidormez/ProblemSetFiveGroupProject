@@ -42,13 +42,13 @@ public class ProblemSetWorksheet {
         }
 
 
-
         GAME:
         while(running) {
             System.out.println("-----------------------------------");
+            System.out.println("You make your way deeper into the crypt, looking for the necromancer.");
             int enemyHealth = rand.nextInt(maxEnemyHealth);
             String enemy = enemies[rand.nextInt(enemies.length)];
-            System.out.println("\t# " + enemy + " appeared! #\n");
+            System.out.println("\t# In from of you, you see a " + enemy + " staggering in the hall! #\n# Prepare to fight! #\n");
 
             while(enemyHealth > 0){
                 System.out.println("\tYour HP: " + health);
@@ -67,7 +67,7 @@ public class ProblemSetWorksheet {
                     health -= damageTaken;
 
                     System.out.println("\t> You Strike the " + enemy + " for " + damageDealt + " damage.");
-                    System.out.println("\t> You recieve " + damageTaken + " in retaliation!");
+                    System.out.println("\t> You receive " + damageTaken + " in retaliation!");
 
                     if(health < 1){
                         System.out.println("\t You have taken too much damage, you re too weak to go on");
@@ -100,7 +100,8 @@ public class ProblemSetWorksheet {
                 }
             }
             if(health < 1) {
-                System.out.println("You limp out of the dungeon, weak from battle.");
+                System.out.println("Blood drips from your wounds as you fall to the ground. \n Will this crypt be your burial ground too?" +
+                        " \n The Necromancer lives another day.");
                 break;
             }
 
@@ -128,10 +129,10 @@ public class ProblemSetWorksheet {
             }
 
             if(input.equals("1")) {
-                System.out.println("You continue on your adventure!");
+                System.out.println("You continue on, forging ahead towards the necromancer!");
             }
             else if (input.equals("2")) {
-                System.out.println("You exit the dungeon, successful from your adventure!");
+                System.out.println("You exit the dungeon alive, but the necromancer lives to haunt another day!");
                 break;
             }
         }
