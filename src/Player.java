@@ -1,5 +1,5 @@
 /*public class Player {
-    public Player{
+    public Player(){
         // Player Variables
         int health = 100;
         int attackDamage = 50;

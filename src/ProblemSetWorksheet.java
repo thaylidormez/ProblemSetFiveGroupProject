@@ -23,9 +23,25 @@ public class ProblemSetWorksheet {
         int healthPotionHealAmount = 30;
         int healthPotionDropChance = 50;
 
-        boolean running = true;
 
-        System.out.println("Welcome to the Dungeon!");
+
+        System.out.println("# After your difficult journey, you have finally reached your destination. #\n# In a crack in the mountain you see the entrance " +
+                "to the necromancer's crypt! #\n# There is no shame in turning away now. #\n# Enter, if you dare! #");
+        System.out.println("What do you do?");
+        System.out.println("1. Enter");
+        System.out.println("2. Turn back");
+
+        String input = scnr.nextLine();
+        boolean running = false;
+
+        if (input.equals("1")){
+            running = true;
+        }
+        else if (input.equals("2")){
+            running = false;
+        }
+
+
 
         GAME:
         while(running) {
@@ -42,7 +58,7 @@ public class ProblemSetWorksheet {
                 System.out.println("\t2. Drink health potion");
                 System.out.println("\t3. Run!");
 
-                String input = scnr.nextLine();
+                input = scnr.nextLine();
                 if(input.equals("1")) {
                     int damageDealt = rand.nextInt(attackDamage);
                     int damageTaken = rand.nextInt(enemyAttackDamage);
@@ -104,7 +120,7 @@ public class ProblemSetWorksheet {
             System.out.println("1. Continue fighting");
             System.out.println("2. Exit dungeon");
 
-            String input = scnr.nextLine();
+            input = scnr.nextLine();
 
             while (!input.equals("1") && !input.equals("2")) {
                 System.out.println("Invalid command!");
