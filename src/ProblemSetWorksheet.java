@@ -11,10 +11,27 @@ public class ProblemSetWorksheet {
         Random rand = new Random();
 
         // game variables
-        String[] enemies = { "Skeleton", "Zombie" , "Warrior", "Assassin" };
         int maxEnemyHealth = 75;
         int enemyAttackDamage = 25;
         int enemiesDefeated = 0;
+
+        Enemy skeleton = new Enemy("Zombie", maxEnemyHealth, enemyAttackDamage);
+        skeleton.setAttackDamage(10);
+        skeleton.setMaxHealth(75);
+
+        Enemy zombie = new Enemy("Skeleton", maxEnemyHealth, enemyAttackDamage);
+        zombie.setAttackDamage(15);
+        zombie.setMaxHealth(85);
+
+        Enemy warrior = new Enemy("Warrior", maxEnemyHealth, enemyAttackDamage);
+        warrior.setAttackDamage(20);
+        warrior.setMaxHealth(95);
+
+        Enemy assassin = new Enemy("Assassin", maxEnemyHealth, enemyAttackDamage);
+        assassin.setAttackDamage(25);
+        assassin.setMaxHealth(120);
+
+        Enemy[] enemies = {skeleton, warrior, assassin, zombie};
 
         // Player Variables
         int health = 100;
@@ -57,11 +74,16 @@ public class ProblemSetWorksheet {
                 System.out.println("\t1. Attack");
                 System.out.println("\t2. Drink health potion");
                 System.out.println("\t3. Run!");
+                //System.out.println("\t4. Hide");
 
                 input = scnr.nextLine();
                 if(input.equals("1")) {
                     int damageDealt = rand.nextInt(attackDamage);
                     int damageTaken = rand.nextInt(enemyAttackDamage);
+
+                    int targetEnemy = rand.nextInt(3);
+
+                    enemies[targetEnemy].setAttackDamage();
 
                     enemyHealth -= damageDealt;
                     health -= damageTaken;
@@ -98,6 +120,7 @@ public class ProblemSetWorksheet {
                     System.out.println("\tInvalid command!");
 
                 }
+
             }
             if(health < 1) {
                 System.out.println("Blood drips from your wounds as you fall to the ground. \n Will this crypt be your burial ground too?" +
