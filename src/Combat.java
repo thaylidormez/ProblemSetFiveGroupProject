@@ -22,8 +22,13 @@ public class Combat {
         //they don't need setters that we access because it is all chosen by the random number we export from main
 
 
-
-        System.out.println("\t# In front of you, you see a " + enemyObj.getName() + " staggering in the hall! #\n# Prepare to fight! #\n");
+        if (nameGenerator < 3) {
+            System.out.println("\t# In front of you, you see a " + enemyObj.getName() + " staggering in the hall! #\n\t# Prepare to fight! #\n");
+        }
+        if (nameGenerator == 3){
+            System.out.println("\t# There! You feel you skin tingle and your bones rattle. Before you stands the dreaded " + enemyObj.getName() +
+                    "! #\n\t# This is the moment. Prepare to fight! #\n");
+        }
 
         while(enemyObj.getCurrHealth() > 0){  //START HERE ON FIGHT METHOD
             System.out.println("\tYour HP: " + player.getCurrHealth());
@@ -80,7 +85,8 @@ public class Combat {
 
         if(enemyObj.getName().equals("Necromancer")){
 
-            System.out.println("Congratulations! You've slain the Necromancer!");
+            System.out.println("Congratulations! You've slain the Necromancer! You leave the cave, knowing the world is safer than " +
+                    "when you entered.");
             System.out.println("####################");
             System.out.println("# THANKS FOR PLAYING! #");
             System.out.println("####################");
