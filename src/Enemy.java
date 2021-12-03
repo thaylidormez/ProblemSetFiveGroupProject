@@ -5,26 +5,37 @@ public class Enemy {
   public int enemyAttackDamage;
   public int currHealth;
 
-  public Enemy(){
+  public Enemy(int dieRoll, String[] names){
+
 
     maxEnemyHealth = 75;
     enemyAttackDamage = 25;
 
-    Enemy skeleton = new Enemy("Skeleton", maxEnemyHealth, enemyAttackDamage);
-    skeleton.setAttackDamage(10);
-    skeleton.setMaxHealth(75);
+    if (dieRoll < 40) {
 
-    Enemy zombie = new Enemy("Zombie", maxEnemyHealth, enemyAttackDamage);
-    zombie.setAttackDamage(15);
-    zombie.setMaxHealth(85);
+      name = names[1];
+      enemyAttackDamage = 10;
+      maxEnemyHealth = 75;
+    }
 
-    Enemy warrior = new Enemy("Mummy", maxEnemyHealth, enemyAttackDamage);
-    warrior.setAttackDamage(20);
-    warrior.setMaxHealth(95);
+    if (dieRoll > 40 && dieRoll < 75) {
+      name = names[2];
+      enemyAttackDamage = 15;
+      maxEnemyHealth = 85;
 
-    Enemy assassin = new Enemy("Necromancer", maxEnemyHealth, enemyAttackDamage);
-    assassin.setAttackDamage(25);
-    assassin.setMaxHealth(120);
+    }
+
+    if (dieRoll > 75 && dieRoll < 95) {
+      name = names[3];
+      enemyAttackDamage = 20;
+      maxEnemyHealth = 95;
+    }
+
+    if(dieRoll > 95) {
+      name = names[4];
+      enemyAttackDamage = 40;
+      maxEnemyHealth = 120;
+    }
 
   }
 

@@ -7,7 +7,8 @@ public class Combat {
         Scanner scnr = new Scanner(System.in);
         Random rand = new Random();
         String[] enemies = {"Skeleton", "Zombie" , "Mummy", "Necromancer" };
-        Enemy enemyObj = new Enemy();
+        int d100 = rand.nextInt(100);
+        Enemy enemyObj = new Enemy(d100, enemies);
 
         int enemyHealth = rand.nextInt(enemyObj.maxEnemyHealth); //this will go in the enemies object
         String enemy = enemies[rand.nextInt(enemies.length)];
@@ -22,8 +23,8 @@ public class Combat {
         System.out.println("\t# In from of you, you see a " + enemyObj.getName + " staggering in the hall! #\n# Prepare to fight! #\n");
 
         while(enemyHealth > 0){  //START HERE ON FIGHT METHOD
-            System.out.println("\tYour HP: " + player.health);
-            System.out.println("\t" + enemyObj.getName + "'s HP: " + enemyObj.Health);
+            System.out.println("\tYour HP: " + player.getCurrHealth());
+            System.out.println("\t" + enemyObj.getName + "'s HP: " + enemyObj.enHealth);
             System.out.println("\n\tWhat would you like to do?");
             System.out.println("\t1. Attack");
             System.out.println("\t2. Drink health potion");
@@ -46,10 +47,10 @@ public class Combat {
                 }
             }
             else if (input.equals("2")){
-                if(numHealthPotions > 0){
+                if(player.getNumHealthPotions() > 0){
                     health += healthPotionHealAmount;
-                    if (health > 100){
-                        health = 100;
+                    if (health > 150){
+                        health = 150;
                     }
                     numHealthPotions--;
                     System.out.println("\t> You drink a health potion, healing yourself for " + healthPotionHealAmount + "."
