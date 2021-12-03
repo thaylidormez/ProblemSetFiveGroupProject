@@ -54,6 +54,13 @@ public class Player {
         this.currHealth = currHealth;
     }
 
+    public int getNumHealthPotions() {
+        return numHealthPotions;
+    }
+
+    public void setNumHealthPotions(int numHealthPotions) {
+        this.attackDamage = numHealthPotions;
+    }
 
 
 
