@@ -66,13 +66,13 @@ public class ProblemSetWorksheet {
             }
 
             System.out.println("-----------------------------------");
-            System.out.println(" # " + enemy.getName + " was defeated! # ");
-            System.out.println(" # You have " + player.health + " HP left. #");
+            System.out.println(" # The Enemy was defeated! # ");
+            System.out.println(" # You have " + player.getCurrHealth() + " HP left. #");
 
             enemiesDefeated++;
             if(rand.nextInt(100) < healthPotionDropChance) {
                 numHealthPotions++;
-                System.out.println(" # The " + enemy.getName + " dropped a health potion! #");
+                System.out.println(" # The enemy dropped a health potion! #");
                 System.out.println(" # You have " + numHealthPotions + " health potion(s). # ");
             }
 

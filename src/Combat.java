@@ -7,10 +7,11 @@ public class Combat {
         Scanner scnr = new Scanner(System.in);
         Random rand = new Random();
         String[] enemies = {"Skeleton", "Zombie" , "Mummy", "Necromancer" };
+        Enemy enemyObj = new Enemy();
 
-        int enemyHealth = rand.nextInt(maxEnemyHealth); //this will go in the enemies object
+        int enemyHealth = rand.nextInt(enemyObj.maxEnemyHealth); //this will go in the enemies object
         String enemy = enemies[rand.nextInt(enemies.length)];
-        Enemy enemyObj = new Enemy(enemy);
+
         //this we can leave mostly in the main and then our
         // enemy object can take in the rand int and then figure out what enemy and what their health/damage is
         //in enemy we will need getName getAttackDamage getHealth

@@ -10,19 +10,19 @@ public class Enemy {
     maxEnemyHealth = 75;
     enemyAttackDamage = 25;
 
-    Enemy skeleton = new Enemy("Zombie", maxEnemyHealth, enemyAttackDamage);
+    Enemy skeleton = new Enemy("Skeleton", maxEnemyHealth, enemyAttackDamage);
     skeleton.setAttackDamage(10);
     skeleton.setMaxHealth(75);
 
-    Enemy zombie = new Enemy("Skeleton", maxEnemyHealth, enemyAttackDamage);
+    Enemy zombie = new Enemy("Zombie", maxEnemyHealth, enemyAttackDamage);
     zombie.setAttackDamage(15);
     zombie.setMaxHealth(85);
 
-    Enemy warrior = new Enemy("Warrior", maxEnemyHealth, enemyAttackDamage);
+    Enemy warrior = new Enemy("Mummy", maxEnemyHealth, enemyAttackDamage);
     warrior.setAttackDamage(20);
     warrior.setMaxHealth(95);
 
-    Enemy assassin = new Enemy("Assassin", maxEnemyHealth, enemyAttackDamage);
+    Enemy assassin = new Enemy("Necromancer", maxEnemyHealth, enemyAttackDamage);
     assassin.setAttackDamage(25);
     assassin.setMaxHealth(120);
 
