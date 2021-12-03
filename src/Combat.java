@@ -67,7 +67,7 @@ public class Combat {
             }
             else if (input.equals("3")) {
                 System.out.println("\tYou run away from the " + enemyObj.getName() + "!");
-                continue GAME;
+                enemyObj.setCurrHealth(0);
             }
             else {
                 System.out.println("\tInvalid command!");
