@@ -43,8 +43,10 @@ public class ProblemSetWorksheet {
         System.out.println("1. Enter");
         System.out.println("2. Turn back");
 
-        String input = scnr.nextLine();
         boolean running = false;
+
+        String input = scnr.next();
+
 
         if (input.equals("1")){
             running = true;

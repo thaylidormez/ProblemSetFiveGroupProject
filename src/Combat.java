@@ -11,7 +11,7 @@ public class Combat {
         Enemy enemyObj = new Enemy(d100, enemies);
         int healthPotionHealAmount = 30;
 
-        int enemyHealth = rand.nextInt(enemyObj.maxEnemyHealth); //this will go in the enemies object
+        int enemyHealth = rand.nextInt(enemyObj.maxEnemyHealth + 1); //this will go in the enemies object
         String enemy = enemies[rand.nextInt(enemies.length)];
 
         //this we can leave mostly in the main and then our
