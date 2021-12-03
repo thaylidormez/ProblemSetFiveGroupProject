@@ -1,11 +1,14 @@
+import java.util.Random;
 
 public class Enemy {
   public String name;
   public int maxEnemyHealth;
   public int enemyAttackDamage;
   public int currHealth;
+  Random rand = new Random();
 
   public Enemy(int dieRoll, String[] names){
+
 
     name = "null";
     maxEnemyHealth = 75; //assign base values just in case
@@ -18,20 +21,20 @@ public class Enemy {
       maxEnemyHealth = 30;
     }
 
-    if (dieRoll > 40 && dieRoll < 75) {
+    if (dieRoll >= 40 && dieRoll < 75) {
       name = names[2];
       enemyAttackDamage = 15;
       maxEnemyHealth = 40;
 
     }
 
-    if (dieRoll > 75 && dieRoll < 95) {
+    if (dieRoll >= 75 && dieRoll < 95) {
       name = names[3];
       enemyAttackDamage = 20;
       maxEnemyHealth = 60;
     }
 
-    if(dieRoll > 95) {
+    if(dieRoll >= 95) {
       name = names[4];
       enemyAttackDamage = 40;
       maxEnemyHealth = 120;

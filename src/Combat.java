@@ -11,8 +11,10 @@ public class Combat {
         Enemy enemyObj = new Enemy(d100, enemies);
         int healthPotionHealAmount = 30;
 
-        int enemyHealth = rand.nextInt(enemyObj.maxEnemyHealth + 1); //this will go in the enemies object
-        String enemy = enemies[rand.nextInt(enemies.length)];
+        enemyObj.setCurrHealth(rand.nextInt(enemyObj.maxEnemyHealth ) + 1); //this will go in the enemies object
+
+        int nameGenerator = rand.nextInt(4);
+        enemyObj.setName(enemies[nameGenerator]);
 
         //this we can leave mostly in the main and then our
         // enemy object can take in the rand int and then figure out what enemy and what their health/damage is
@@ -23,7 +25,7 @@ public class Combat {
 
         System.out.println("\t# In from of you, you see a " + enemyObj.getName() + " staggering in the hall! #\n# Prepare to fight! #\n");
 
-        while(enemyHealth > 0){  //START HERE ON FIGHT METHOD
+        while(enemyObj.getCurrHealth() > 0){  //START HERE ON FIGHT METHOD
             System.out.println("\tYour HP: " + player.getCurrHealth());
             System.out.println("\t" + enemyObj.getName() + "'s HP: " + enemyObj.getCurrHealth());
             System.out.println("\n\tWhat would you like to do?");
@@ -36,7 +38,7 @@ public class Combat {
                 int damageDealt = rand.nextInt(player.getAttackDamage());
                 int damageTaken = rand.nextInt(enemyObj.enemyAttackDamage);
 
-                enemyHealth -= damageDealt; //change these to call methods within the enemy
+                enemyObj.setCurrHealth(enemyObj.getCurrHealth() - damageDealt); //change these to call methods within the enemy
                 int tempHealth = player.getCurrHealth();
                 player.setCurrHealth(tempHealth - damageTaken); //change to call method within player
 
