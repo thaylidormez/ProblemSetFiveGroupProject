@@ -7,28 +7,28 @@ public class Enemy {
 
   public Enemy(int dieRoll, String[] names){
 
-
-    maxEnemyHealth = 75;
+    name = "null";
+    maxEnemyHealth = 75; //assign base values just in case
     enemyAttackDamage = 25;
 
     if (dieRoll < 40) {
 
       name = names[1];
       enemyAttackDamage = 10;
-      maxEnemyHealth = 75;
+      maxEnemyHealth = 30;
     }
 
     if (dieRoll > 40 && dieRoll < 75) {
       name = names[2];
       enemyAttackDamage = 15;
-      maxEnemyHealth = 85;
+      maxEnemyHealth = 40;
 
     }
 
     if (dieRoll > 75 && dieRoll < 95) {
       name = names[3];
       enemyAttackDamage = 20;
-      maxEnemyHealth = 95;
+      maxEnemyHealth = 60;
     }
 
     if(dieRoll > 95) {

@@ -9,6 +9,7 @@ public class Combat {
         String[] enemies = {"Skeleton", "Zombie" , "Mummy", "Necromancer" };
         int d100 = rand.nextInt(100);
         Enemy enemyObj = new Enemy(d100, enemies);
+        int healthPotionHealAmount = 30;
 
         int enemyHealth = rand.nextInt(enemyObj.maxEnemyHealth); //this will go in the enemies object
         String enemy = enemies[rand.nextInt(enemies.length)];
@@ -20,11 +21,11 @@ public class Combat {
 
 
 
-        System.out.println("\t# In from of you, you see a " + enemyObj.getName + " staggering in the hall! #\n# Prepare to fight! #\n");
+        System.out.println("\t# In from of you, you see a " + enemyObj.getName() + " staggering in the hall! #\n# Prepare to fight! #\n");
 
         while(enemyHealth > 0){  //START HERE ON FIGHT METHOD
             System.out.println("\tYour HP: " + player.getCurrHealth());
-            System.out.println("\t" + enemyObj.getName + "'s HP: " + enemyObj.enHealth);
+            System.out.println("\t" + enemyObj.getName() + "'s HP: " + enemyObj.getCurrHealth());
             System.out.println("\n\tWhat would you like to do?");
             System.out.println("\t1. Attack");
             System.out.println("\t2. Drink health potion");
@@ -32,30 +33,32 @@ public class Combat {
 
             String input = scnr.nextLine();
             if(input.equals("1")) {
-                int damageDealt = rand.nextInt(attackDamage);
-                int damageTaken = rand.nextInt(enemy.enemyAttackDamage);
+                int damageDealt = rand.nextInt(player.getAttackDamage());
+                int damageTaken = rand.nextInt(enemyObj.enemyAttackDamage);
 
                 enemyHealth -= damageDealt; //change these to call methods within the enemy
-                health -= damageTaken; //change to call method within player
+                int tempHealth = player.getCurrHealth();
+                player.setCurrHealth(tempHealth - damageTaken); //change to call method within player
 
-                System.out.println("\t> You Strike the " + enemyObj.getName + " for " + damageDealt + " damage.");
+                System.out.println("\t> You Strike the " + enemyObj.getName() + " for " + damageDealt + " damage.");
                 System.out.println("\t> You receive " + damageTaken + " in retaliation!");
 
-                if(health < 1){
+                if(player.getCurrHealth() < 1){
                     System.out.println("\t You have taken too much damage, you re too weak to go on");
                     break;
                 }
             }
             else if (input.equals("2")){
                 if(player.getNumHealthPotions() > 0){
-                    health += healthPotionHealAmount;
-                    if (health > 150){
-                        health = 150;
+                    player.setCurrHealth(player.getCurrHealth() + healthPotionHealAmount);
+
+                    if (player.getCurrHealth() > 150){
+                        player.setCurrHealth(150);
                     }
-                    numHealthPotions--;
+                    player.setNumHealthPotions(player.getNumHealthPotions()- 1);
                     System.out.println("\t> You drink a health potion, healing yourself for " + healthPotionHealAmount + "."
-                            + "\n\t> You now have " + player.health + " HP."
-                            + "\n\t> You have " + numHealthPotions + " health potions left. \n");
+                            + "\n\t> You now have " + player.getCurrHealth() + " HP."
+                            + "\n\t> You have " + player.getNumHealthPotions() + " health potions left. \n");
                 }
 
                 else {
@@ -63,7 +66,7 @@ public class Combat {
                 }
             }
             else if (input.equals("3")) {
-                System.out.println("\tYou run away from the " + enemy.getName + "!");
+                System.out.println("\tYou run away from the " + enemyObj.getName() + "!");
                 continue GAME;
             }
             else {

@@ -30,7 +30,7 @@ public class ProblemSetWorksheet {
         player.setCurrHealth(150);
         player.setAttackDamage(50);
         player.setNumHealthPotions(3);
-        int healthPotionHealAmount = 30;
+
         int healthPotionDropChance = 50;
 
 
