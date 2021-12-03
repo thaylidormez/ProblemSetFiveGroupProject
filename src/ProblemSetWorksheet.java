@@ -80,7 +80,7 @@ public class ProblemSetWorksheet {
 
             System.out.println("-----------------------------------");
             System.out.println("What would you like to do now?");
-            System.out.println("1. Continue fighting");
+            System.out.println("1. Delve deeper");
             System.out.println("2. Exit dungeon");
 
             input = scnr.nextLine();
