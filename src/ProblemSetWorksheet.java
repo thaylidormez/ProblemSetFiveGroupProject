@@ -62,7 +62,7 @@ public class ProblemSetWorksheet {
 
             System.out.println("\t# In from of you, you see a " + enemy.getName + " staggering in the hall! #\n# Prepare to fight! #\n");
 
-            while(enemyHealth > 0){
+            while(enemyHealth > 0){  //START HERE ON FIGHT METHOD
                 System.out.println("\tYour HP: " + player.health);
                 System.out.println("\t" + enemy.getName + "'s HP: " + enemy.Health);
                 System.out.println("\n\tWhat would you like to do?");
@@ -110,7 +110,8 @@ public class ProblemSetWorksheet {
                     System.out.println("\tInvalid command!");
 
                 }
-            }
+            }//END HERE ON THE COMBAT METHOD -everything between the start and end can fit in a method
+            //we just have the parameters be our enemy and player objects
             if(health < 1) {
                 System.out.println("Blood drips from your wounds as you fall to the ground. \n Will this crypt be your burial ground too?" +
                         " \n The Necromancer lives another day.");
