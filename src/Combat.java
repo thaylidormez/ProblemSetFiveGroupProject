@@ -23,7 +23,7 @@ public class Combat {
 
 
 
-        System.out.println("\t# In from of you, you see a " + enemyObj.getName() + " staggering in the hall! #\n# Prepare to fight! #\n");
+        System.out.println("\t# In front of you, you see a " + enemyObj.getName() + " staggering in the hall! #\n# Prepare to fight! #\n");
 
         while(enemyObj.getCurrHealth() > 0){  //START HERE ON FIGHT METHOD
             System.out.println("\tYour HP: " + player.getCurrHealth());
