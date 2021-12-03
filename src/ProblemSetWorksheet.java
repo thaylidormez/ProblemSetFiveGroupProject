@@ -59,7 +59,11 @@ public class ProblemSetWorksheet {
             System.out.println("-----------------------------------");
             System.out.println("You make your way deeper into the crypt, looking for the necromancer.");
 
-            Combat.runCombat(player);
+
+            if (Combat.runCombat(player) == false) {
+            continue;
+            }
+
 
             if(player.getCurrHealth() < 1) {
                 System.out.println("Blood drips from your wounds as you fall to the ground. \n Will this crypt be your burial ground too?" +

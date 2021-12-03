@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Combat {
-    public static void runCombat(Player player){
+    public static boolean runCombat(Player player){
 
         Scanner scnr = new Scanner(System.in);
         Random rand = new Random();
@@ -67,7 +67,7 @@ public class Combat {
             }
             else if (input.equals("3")) {
                 System.out.println("\tYou run away from the " + enemyObj.getName() + "!");
-                enemyObj.setCurrHealth(0);
+                return false;
             }
             else {
                 System.out.println("\tInvalid command!");
@@ -75,5 +75,6 @@ public class Combat {
             }
         }//END HERE ON THE COMBAT METHOD -everything between the start and end can fit in a method
         //we just have the parameters be our enemy and player objects
+        return true;
     }
 }
