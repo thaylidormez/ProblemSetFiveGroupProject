@@ -13,8 +13,8 @@ public class Combat {
 
         enemyObj.setCurrHealth(rand.nextInt(enemyObj.maxEnemyHealth ) + 1); //this will go in the enemies object
 
-        int nameGenerator = rand.nextInt(4);
-        enemyObj.setName(enemies[nameGenerator]);
+        //int nameGenerator = rand.nextInt(4);
+        //enemyObj.setName(enemies[nameGenerator]);
 
         //this we can leave mostly in the main and then our
         // enemy object can take in the rand int and then figure out what enemy and what their health/damage is
@@ -22,10 +22,10 @@ public class Combat {
         //they don't need setters that we access because it is all chosen by the random number we export from main
 
 
-        if (nameGenerator < 3) {
+        if (!enemyObj.getName().equals("Necromancer")) {
             System.out.println("\t# In front of you, you see a " + enemyObj.getName() + " staggering in the hall! #\n\t# Prepare to fight! #\n");
         }
-        if (nameGenerator == 3){
+        if (enemyObj.getName().equals("Necromancer")){
             System.out.println("\t# There! You feel you skin tingle and your bones rattle. Before you stands the dreaded " + enemyObj.getName() +
                     "! #\n\t# This is the moment. Prepare to fight! #\n");
         }
