@@ -61,7 +61,6 @@ public class ProblemSetWorksheet {
             System.out.println("-----------------------------------");
             System.out.println("You make your way deeper into the crypt, looking for the necromancer.");
 
-
             if (Combat.runCombat(player) == false) {
             continue;
             }
