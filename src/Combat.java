@@ -2,10 +2,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Combat {
-    public static void runCombat(Player player, Enemy enemy, String[] enemies){
+    public static void runCombat(Player player){
 
         Scanner scnr = new Scanner(System.in);
         Random rand = new Random();
+        String[] enemies = {"Skeleton", "Zombie" , "Mummy", "Necromancer" };
 
         int enemyHealth = rand.nextInt(maxEnemyHealth); //this will go in the enemies object
         String enemy = enemies[rand.nextInt(enemies.length)]; //this we can leave mostly in the main and then our
