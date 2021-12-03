@@ -72,6 +72,7 @@ public class ProblemSetWorksheet {
             System.out.println("-----------------------------------");
             System.out.println("You make your way deeper into the crypt, looking for the necromancer.");
 
+            //below here in combat method
             int enemyHealth = rand.nextInt(maxEnemyHealth); //this will go in the enemies object
             String enemy = enemies[rand.nextInt(enemies.length)]; //this we can leave mostly in the main and then our
             // enemy object can take in the rand int and then figure out what enemy and what their health/damage is
@@ -175,4 +176,6 @@ public class ProblemSetWorksheet {
         System.out.println("####################");
 
     }
+
+
 }

@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Combat {
-    public static void runCombat(Player player, Enemy enemy){
+    public static void runCombat(Player player, Enemy enemy, String[] enemies){
 
         Scanner scnr = new Scanner(System.in);
         Random rand = new Random();
@@ -28,7 +28,7 @@ public class Combat {
             String input = scnr.nextLine();
             if(input.equals("1")) {
                 int damageDealt = rand.nextInt(attackDamage);
-                int damageTaken = rand.nextInt(enemyAttackDamage);
+                int damageTaken = rand.nextInt(enemy.enemyAttackDamage);
 
                 enemyHealth -= damageDealt; //change these to call methods within the enemy
                 health -= damageTaken; //change to call method within player
