@@ -27,7 +27,7 @@ public class ProblemSetWorksheet {
 
         System.out.println("Enter your name:");
         player.setName(scnr.next());
-        player.setMaxHealth(scnr.nextInt());
+        player.setMaxHealth(150);
         player.setCurrHealth(player.getMaxHealth());
         player.setAttackDamage(50);
         player.setNumHealthPotions(3);
