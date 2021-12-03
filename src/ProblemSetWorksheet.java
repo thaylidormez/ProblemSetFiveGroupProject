@@ -17,11 +17,16 @@ public class ProblemSetWorksheet {
         int enemiesDefeated = 0;
 
         // Player Variables
-        int health = 100;
+
+        System.out.println("Enter your name:");
+        String name = scnr.next();
+        int health = 150;
         int attackDamage = 50;
         int numHealthPotions = 3;
         int healthPotionHealAmount = 30;
         int healthPotionDropChance = 50;
+
+        Player player = new Player(name, health, attackDamage, numHealthPotions);
 
 
 
