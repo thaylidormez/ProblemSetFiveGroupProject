@@ -11,10 +11,7 @@ public class ProblemSetWorksheet {
         Random rand = new Random();
 
         // game variables
-        String[] enemies = { "Skeleton", "Zombie" , "Mummy", "Necromancer" };
-        int maxEnemyHealth = 75;
-        int enemyAttackDamage = 25;
-        int enemiesDefeated = 0;
+
 
 
 
