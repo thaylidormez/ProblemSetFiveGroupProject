@@ -50,13 +50,16 @@ public class ProblemSetWorksheet {
             int enemyHealth = rand.nextInt(maxEnemyHealth); //this will go in the enemies object
             String enemy = enemies[rand.nextInt(enemies.length)]; //this we can leave mostly in the main and then our
             // enemy object can take in the rand int and then figure out what enemy and what their health/damage is
+            //in enemy we will need getName getAttackDamage getHealth
+            //they don't need setters that we access because it is all chosen by the random number we export from main
 
 
-            System.out.println("\t# In from of you, you see a " + enemy + " staggering in the hall! #\n# Prepare to fight! #\n");
+
+            System.out.println("\t# In from of you, you see a " + enemy.getName + " staggering in the hall! #\n# Prepare to fight! #\n");
 
             while(enemyHealth > 0){
-                System.out.println("\tYour HP: " + health);
-                System.out.println("\t" + enemy + "'s HP: " + enemyHealth);
+                System.out.println("\tYour HP: " + player.health);
+                System.out.println("\t" + enemy.getName + "'s HP: " + enemy.Health);
                 System.out.println("\n\tWhat would you like to do?");
                 System.out.println("\t1. Attack");
                 System.out.println("\t2. Drink health potion");
@@ -67,10 +70,10 @@ public class ProblemSetWorksheet {
                     int damageDealt = rand.nextInt(attackDamage);
                     int damageTaken = rand.nextInt(enemyAttackDamage);
 
-                    enemyHealth -= damageDealt;
-                    health -= damageTaken;
+                    enemyHealth -= damageDealt; //change these to call methods within the enemy
+                    health -= damageTaken; //change to call method within player
 
-                    System.out.println("\t> You Strike the " + enemy + " for " + damageDealt + " damage.");
+                    System.out.println("\t> You Strike the " + enemy.getName + " for " + damageDealt + " damage.");
                     System.out.println("\t> You receive " + damageTaken + " in retaliation!");
 
                     if(health < 1){
@@ -86,7 +89,7 @@ public class ProblemSetWorksheet {
                         }
                         numHealthPotions--;
                         System.out.println("\t> You drink a health potion, healing yourself for " + healthPotionHealAmount + "."
-                                + "\n\t> You now have " + health + " HP."
+                                + "\n\t> You now have " + player.health + " HP."
                                 + "\n\t> You have " + numHealthPotions + " health potions left. \n");
                     }
 
@@ -95,7 +98,7 @@ public class ProblemSetWorksheet {
                     }
                 }
                 else if (input.equals("3")) {
-                    System.out.println("\tYou run away from the " + enemy + "!");
+                    System.out.println("\tYou run away from the " + enemy.getName + "!");
                     continue GAME;
                 }
                 else {
@@ -110,13 +113,13 @@ public class ProblemSetWorksheet {
             }
 
             System.out.println("-----------------------------------");
-            System.out.println(" # " + enemy + " was defeated! # ");
-            System.out.println(" # You have " + health + " HP left. #");
+            System.out.println(" # " + enemy.getName + " was defeated! # ");
+            System.out.println(" # You have " + player.health + " HP left. #");
 
             enemiesDefeated++;
             if(rand.nextInt(100) < healthPotionDropChance) {
                 numHealthPotions++;
-                System.out.println(" # The " + enemy + " dropped a health potion! #");
+                System.out.println(" # The " + enemy.getName + " dropped a health potion! #");
                 System.out.println(" # You have " + numHealthPotions + " health potion(s). # ");
             }
 
