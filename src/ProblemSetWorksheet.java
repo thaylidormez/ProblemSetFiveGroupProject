@@ -27,8 +27,7 @@ public class ProblemSetWorksheet {
 
         System.out.println("Enter your name:");
         player.setName(scnr.next());
-        player.setMaxHealth(150);
-        player.setCurrHealth(player.getMaxHealth());
+        player.setCurrHealth(150);
         player.setAttackDamage(50);
         player.setNumHealthPotions(3);
         int healthPotionHealAmount = 30;
@@ -62,7 +61,7 @@ public class ProblemSetWorksheet {
 
             Combat.runCombat(player);
 
-            if(health < 1) {
+            if(player.getCurrHealth() < 1) {
                 System.out.println("Blood drips from your wounds as you fall to the ground. \n Will this crypt be your burial ground too?" +
                         " \n The Necromancer lives another day.");
                 break;
@@ -74,9 +73,9 @@ public class ProblemSetWorksheet {
 
             enemiesDefeated++;
             if(rand.nextInt(100) < healthPotionDropChance) {
-                numHealthPotions++;
+                player.setNumHealthPotions(player.getNumHealthPotions() + 1);
                 System.out.println(" # The enemy dropped a health potion! #");
-                System.out.println(" # You have " + numHealthPotions + " health potion(s). # ");
+                System.out.println(" # You have " + player.getNumHealthPotions() + " health potion(s). # ");
             }
 
             System.out.println("-----------------------------------");

@@ -1,6 +1,5 @@
 public class Player {
-    private int maxHealth;
-    private int attackDamage ;
+        private int attackDamage ;
     private int numHealthPotions;
     private String name;
     private int currHealth;
@@ -8,7 +7,7 @@ public class Player {
     public Player(){
         // Player Variables
         name = "Bob";
-        maxHealth = 100;
+        currHealth = 100;
         attackDamage = 50;
         numHealthPotions = 3;
 
@@ -17,7 +16,7 @@ public class Player {
     public Player(String name, int health, int attackDamage, int numHealthPotions){
 
         this.name = name;
-        this.maxHealth = health;
+        this.currHealth = health;
         this.attackDamage = attackDamage;
         this.numHealthPotions = numHealthPotions;
     }
@@ -30,13 +29,6 @@ public class Player {
         this.name = name;
     }
 
-    public int getMaxHealth() {
-        return maxHealth;
-    }
-
-    public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
-    }
 
     public int getAttackDamage() {
         return attackDamage;
