@@ -9,18 +9,20 @@ public class Combat {
         String[] enemies = {"Skeleton", "Zombie" , "Mummy", "Necromancer" };
 
         int enemyHealth = rand.nextInt(maxEnemyHealth); //this will go in the enemies object
-        String enemy = enemies[rand.nextInt(enemies.length)]; //this we can leave mostly in the main and then our
+        String enemy = enemies[rand.nextInt(enemies.length)];
+        Enemy enemyObj = new Enemy(enemy);
+        //this we can leave mostly in the main and then our
         // enemy object can take in the rand int and then figure out what enemy and what their health/damage is
         //in enemy we will need getName getAttackDamage getHealth
         //they don't need setters that we access because it is all chosen by the random number we export from main
 
 
 
-        System.out.println("\t# In from of you, you see a " + enemy.getName + " staggering in the hall! #\n# Prepare to fight! #\n");
+        System.out.println("\t# In from of you, you see a " + enemyObj.getName + " staggering in the hall! #\n# Prepare to fight! #\n");
 
         while(enemyHealth > 0){  //START HERE ON FIGHT METHOD
             System.out.println("\tYour HP: " + player.health);
-            System.out.println("\t" + enemy.getName + "'s HP: " + enemy.Health);
+            System.out.println("\t" + enemyObj.getName + "'s HP: " + enemyObj.Health);
             System.out.println("\n\tWhat would you like to do?");
             System.out.println("\t1. Attack");
             System.out.println("\t2. Drink health potion");
@@ -34,7 +36,7 @@ public class Combat {
                 enemyHealth -= damageDealt; //change these to call methods within the enemy
                 health -= damageTaken; //change to call method within player
 
-                System.out.println("\t> You Strike the " + enemy.getName + " for " + damageDealt + " damage.");
+                System.out.println("\t> You Strike the " + enemyObj.getName + " for " + damageDealt + " damage.");
                 System.out.println("\t> You receive " + damageTaken + " in retaliation!");
 
                 if(health < 1){

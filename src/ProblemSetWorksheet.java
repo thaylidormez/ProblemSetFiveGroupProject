@@ -11,31 +11,15 @@ public class ProblemSetWorksheet {
         Random rand = new Random();
 
         // game variables
-        String[] enemies = { "Skeleton", "Zombie" , "Mummy", "Necromancer" };
-        int maxEnemyHealth = 75;
-        int enemyAttackDamage = 25;
+
+
         int enemiesDefeated = 0;
 
 
 
-        Enemy skeleton = new Enemy("Zombie", maxEnemyHealth, enemyAttackDamage);
-        skeleton.setAttackDamage(10);
-        skeleton.setMaxHealth(75);
 
-        Enemy zombie = new Enemy("Skeleton", maxEnemyHealth, enemyAttackDamage);
-        zombie.setAttackDamage(15);
-        zombie.setMaxHealth(85);
 
-        Enemy warrior = new Enemy("Warrior", maxEnemyHealth, enemyAttackDamage);
-        warrior.setAttackDamage(20);
-        warrior.setMaxHealth(95);
 
-        Enemy assassin = new Enemy("Assassin", maxEnemyHealth, enemyAttackDamage);
-        assassin.setAttackDamage(25);
-        assassin.setMaxHealth(120);
-
-        Enemy[] enemyObjects = {Skeleton, Zombie , Mummy, Necromancer};
-        //move to the enemy method, dont thing we need an array here
 
         // Player Variables
 

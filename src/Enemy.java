@@ -1,15 +1,38 @@
 
 public class Enemy {
   public String name;
-  public int maxHealth;
+  public int maxEnemyHealth;
   public int enemyAttackDamage;
   public int currHealth;
 
-  public Enemy(String name, int maxHealth, int attackDamage) {
+  public Enemy(){
+
+    maxEnemyHealth = 75;
+    enemyAttackDamage = 25;
+
+    Enemy skeleton = new Enemy("Zombie", maxEnemyHealth, enemyAttackDamage);
+    skeleton.setAttackDamage(10);
+    skeleton.setMaxHealth(75);
+
+    Enemy zombie = new Enemy("Skeleton", maxEnemyHealth, enemyAttackDamage);
+    zombie.setAttackDamage(15);
+    zombie.setMaxHealth(85);
+
+    Enemy warrior = new Enemy("Warrior", maxEnemyHealth, enemyAttackDamage);
+    warrior.setAttackDamage(20);
+    warrior.setMaxHealth(95);
+
+    Enemy assassin = new Enemy("Assassin", maxEnemyHealth, enemyAttackDamage);
+    assassin.setAttackDamage(25);
+    assassin.setMaxHealth(120);
+
+  }
+
+  public Enemy(String name, int maxEnemyHealth, int attackDamage) {
     this.name = name;
-    this.maxHealth = maxHealth;
+    this.maxEnemyHealth = maxEnemyHealth;
     this.enemyAttackDamage = attackDamage;
-    this.currHealth = maxHealth;
+    this.currHealth = maxEnemyHealth;
   }
 
   public String getName() {
@@ -21,11 +44,11 @@ public class Enemy {
   }
 
   public int getMaxHealth() {
-    return maxHealth;
+    return maxEnemyHealth;
   }
 
   public void setMaxHealth(int maxHealth) {
-    this.maxHealth = maxHealth;
+    this.maxEnemyHealth = maxHealth;
   }
 
   public int getAttackDamage() {
