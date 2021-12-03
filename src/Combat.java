@@ -77,6 +77,17 @@ public class Combat {
             }
         }//END HERE ON THE COMBAT METHOD -everything between the start and end can fit in a method
         //we just have the parameters be our enemy and player objects
+
+        if(enemyObj.getName().equals("Necromancer")){
+
+            System.out.println("Congratulations! You've slain the Necromancer!");
+            System.out.println("####################");
+            System.out.println("# THANKS FOR PLAYING! #");
+            System.out.println("####################");
+            System.exit(1);
+
+        }
+
         return true;
     }
 }
