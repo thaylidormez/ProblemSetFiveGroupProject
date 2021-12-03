@@ -35,7 +35,7 @@ public class Combat {
 
             String input = scnr.nextLine();
             if(input.equals("1")) {
-                int damageDealt = rand.nextInt(player.getAttackDamage());
+                int damageDealt = rand.nextInt(player.attackDamage);
                 int damageTaken = rand.nextInt(enemyObj.enemyAttackDamage);
 
                 enemyObj.setCurrHealth(enemyObj.getCurrHealth() - damageDealt); //change these to call methods within the enemy

@@ -1,8 +1,8 @@
 public class Player {
-        private int attackDamage ;
-    private int numHealthPotions;
-    private String name;
-    private int currHealth;
+    public int attackDamage ;
+    public int numHealthPotions;
+    public String name;
+    public int currHealth;
 
     public Player(){
         // Player Variables
@@ -51,7 +51,7 @@ public class Player {
     }
 
     public void setNumHealthPotions(int numHealthPotions) {
-        this.attackDamage = numHealthPotions;
+        this.numHealthPotions = numHealthPotions;
     }
 
 
