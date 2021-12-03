@@ -13,8 +13,6 @@ public class Combat {
 
         enemyObj.setCurrHealth(rand.nextInt(enemyObj.maxEnemyHealth ) + 1); //this will go in the enemies object
 
-        //int nameGenerator = rand.nextInt(4);
-        //enemyObj.setName(enemies[nameGenerator]);
 
         //this we can leave mostly in the main and then our
         // enemy object can take in the rand int and then figure out what enemy and what their health/damage is
