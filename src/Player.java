@@ -17,3 +17,5 @@ public class Player {
         this.numHealthPotions = numHealthPotions;
     }
 }
+
+// new changes
