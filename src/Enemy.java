@@ -3,12 +3,13 @@ public class Enemy {
   private String name;
   private int maxHealth;
   private int attackDamage;
+  private int currHealth;
 
   public Enemy(String name, int maxHealth, int attackDamage) {
     this.name = name;
     this.maxHealth = maxHealth;
     this.attackDamage = attackDamage;
-
+    this.currHealth = maxHealth;
   }
 
   public String getName() {
@@ -35,13 +36,11 @@ public class Enemy {
     this.attackDamage = attackDamage;
   }
 
-  //Skeleton; max health: 75    attack damage: 10
+  public int getCurrHealth() {
+    return currHealth;
+  }
 
-      //Zombie; max health: 85      attack damage: 15
-
-      //Warrior; max health: 95     attack damage: 20
-
-      //Assassin; max health: 110   attack damage: 25
-
-    // decromancer; max health : 200 attack damage: 30 final boss to defeat the game 1/20 chance of it showing up
+  public void setCurrHealth(int currHealth) {
+    this.currHealth = currHealth;
+  }
 }
