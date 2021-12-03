@@ -1,21 +1,29 @@
 public class Player {
-    private int health;
-    private int attackDamage ;
-    private int numHealthPotions;
+    public int health;
+    public int attackDamage ;
+    public int numHealthPotions;
+    public String name;
 
     public Player(){
         // Player Variables
-        int health = 100;
-        int attackDamage = 50;
-        int numHealthPotions = 3;
+        name = "Bob";
+        health = 100;
+        attackDamage = 50;
+        numHealthPotions = 3;
 
     }
 
-    public Player(int health, int attackDamage, int numHealthPotions){
+    public Player(String name, int health, int attackDamage, int numHealthPotions){
+
+        this.name = name;
         this.health = health;
         this.attackDamage = attackDamage;
         this.numHealthPotions = numHealthPotions;
     }
+
+
+
+
 }
 
 // new changes
