@@ -1,14 +1,14 @@
 
 public class Enemy {
-  private String name;
-  private int maxHealth;
-  private int attackDamage;
-  private int currHealth;
+  public String name;
+  public int maxHealth;
+  public int enemyAttackDamage;
+  public int currHealth;
 
   public Enemy(String name, int maxHealth, int attackDamage) {
     this.name = name;
     this.maxHealth = maxHealth;
-    this.attackDamage = attackDamage;
+    this.enemyAttackDamage = attackDamage;
     this.currHealth = maxHealth;
   }
 
@@ -29,11 +29,11 @@ public class Enemy {
   }
 
   public int getAttackDamage() {
-    return attackDamage;
+    return enemyAttackDamage;
   }
 
   public void setAttackDamage(int attackDamage) {
-    this.attackDamage = attackDamage;
+    this.enemyAttackDamage = attackDamage;
   }
 
   public int getCurrHealth() {
