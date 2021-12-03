@@ -23,15 +23,18 @@ public class ProblemSetWorksheet {
 
         // Player Variables
 
+        Player player = new Player();
+
         System.out.println("Enter your name:");
-        String name = scnr.next();
-        int health = 150;
-        int attackDamage = 50;
-        int numHealthPotions = 3;
+        player.setName(scnr.next());
+        player.setMaxHealth(scnr.nextInt());
+        player.setCurrHealth(player.getMaxHealth());
+        player.setAttackDamage(50);
+        player.;
         int healthPotionHealAmount = 30;
         int healthPotionDropChance = 50;
 
-        Player player = new Player(name, health, attackDamage, numHealthPotions);
+
 
 
 
